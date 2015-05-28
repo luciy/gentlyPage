@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Gentlypage by luciy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Gentlypage</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/luciy/gentlyPage" class="btn">View on GitHub</a>
+      <a href="https://github.com/luciy/gentlyPage/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/luciy/gentlyPage/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="平滑切换组件" class="anchor" href="#%E5%B9%B3%E6%BB%91%E5%88%87%E6%8D%A2%E7%BB%84%E4%BB%B6" aria-hidden="true"><span class="octicon octicon-link"></span></a>平滑切换组件</h1>
+
+<p>gentlyPage 移动端（基于Zepto）的竖屏轮播插件：<a href="http://luciy.github.io/gentlyPage/">http://luciy.github.io/gentlyPage/</a></p>
+
+<p>Demo: <a href="http://demo.uis.cc/gentlyPage/">http://demo.uis.cc/gentlyPage/</a></p>
+
+<hr>
+
+<h4>
+<a id="用法" class="anchor" href="#%E7%94%A8%E6%B3%95" aria-hidden="true"><span class="octicon octicon-link"></span></a>用法</h4>
+
+<p>只需要引入依赖的资源，遵循下面例子中的模式。</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">路径</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>js/gentlyPage.js</code></td>
+<td align="left">js引用路径。</td>
+</tr>
+<tr>
+<td align="left"><code>css/base.css</code></td>
+<td align="left">css引用路径。</td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+<h4>
+<a id="js实例化" class="anchor" href="#js%E5%AE%9E%E4%BE%8B%E5%8C%96" aria-hidden="true"><span class="octicon octicon-link"></span></a>js实例化:</h4>
+
+<pre><code>var mySwipe = new GentlyPage({
+    zIndex: 999,                // 默认层级
+    activeClassName: 'active',  // 切换到当前显示层添加的ClassName
+    animationDuration: 800,     // 切换动画时间
+    timingFunction: 'ease',     // 动画曲线
+    callback: function() {}     // 切换后的回调
+});
+
+// 调用方法
+mySwipe.moveUpOut($page01,$page02);
+</code></pre>
+
+<hr>
+
+<h4>
+<a id="参数详解" class="anchor" href="#%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3" aria-hidden="true"><span class="octicon octicon-link"></span></a>参数详解：</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>zIndex</code></td>
+<td align="left">整数 (默认：999) 默认层级。</td>
+</tr>
+<tr>
+<td align="left"><code>activeClassName</code></td>
+<td align="left">ClassName (默认：active) 动画当前页面外层添加的class名称用于CSS3动画。</td>
+</tr>
+<tr>
+<td align="left"><code>animationDuration</code></td>
+<td align="left">整数 (默认：500) 动画时间。</td>
+</tr>
+<tr>
+<td align="left"><code>timingFunction</code></td>
+<td align="left">String (默认：ease) 动画曲线</td>
+</tr>
+<tr>
+<td align="left"><code>callback</code></td>
+<td align="left">function类型 切换后的回调</td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+<h4>
+<a id="api" class="anchor" href="#api" aria-hidden="true"><span class="octicon octicon-link"></span></a>API：</h4>
+
+<p>gentlyPage 对外暴漏了一些方法，这些方法对于控制是有用的。</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">moveUpOut()</td>
+<td align="left">当前屏向上划出屏幕, 接收2个参数分别为当前页对象和目标切换页对象。</td>
+</tr>
+<tr>
+<td align="left">moveUpIn()</td>
+<td align="left">下一屏向上划入屏幕</td>
+</tr>
+<tr>
+<td align="left">moveDownOut()</td>
+<td align="left">当前屏向下划出屏幕</td>
+</tr>
+<tr>
+<td align="left">moveDownIn()</td>
+<td align="left">下一屏向下划入屏幕</td>
+</tr>
+<tr>
+<td align="left">moveLeftOut()</td>
+<td align="left">当前屏向左划出屏幕</td>
+</tr>
+<tr>
+<td align="left">moveLeftIn()</td>
+<td align="left">下一屏向左划入屏幕</td>
+</tr>
+<tr>
+<td align="left">moveRightOut()</td>
+<td align="left">当前屏向右划入屏幕</td>
+</tr>
+<tr>
+<td align="left">moveRightIn()</td>
+<td align="left">下一屏向右划入屏幕</td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+<h4>
+<a id="最新版本" class="anchor" href="#%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC" aria-hidden="true"><span class="octicon octicon-link"></span></a>最新版本</h4>
+
+<p>0.1(150528)     新增API调用方法。</p>
+
+<hr>
+
+<h4>
+<a id="支持设备的浏览器" class="anchor" href="#%E6%94%AF%E6%8C%81%E8%AE%BE%E5%A4%87%E7%9A%84%E6%B5%8F%E8%A7%88%E5%99%A8" aria-hidden="true"><span class="octicon octicon-link"></span></a>支持设备的浏览器</h4>
+
+<ul>
+<li>iOS7 Safari (and above)</li>
+<li>Android 4.0.3 (and above default browser)</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/luciy/gentlyPage">Gentlypage</a> is maintained by <a href="https://github.com/luciy">luciy</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
+
