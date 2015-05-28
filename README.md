@@ -39,7 +39,7 @@ mySwipe.moveUpOut($page01,$page02);
 | :-------- | :--------|
 | `zIndex`	| 整数 (默认：999) 默认层级。| 
 | `activeClassName`	| ClassName (默认：active) 动画当前页面外层添加的class名称用于CSS3动画。| 
-| `animationDuration`	| 整数 (默认：500) 动画时间。| 
+| `animationDuration`	| 整数 (默认：800) 动画时间。| 
 | `timingFunction`	| String (默认：ease) 动画曲线| 
 | `callback`	| function类型 切换后的回调| 
 
