@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+// 导入core中的基础文件
+// ====================================
+@import "core/setting";
+@import "core/reset";
+@import "core/css3";
+@import "core/media-queries";
+@import "core/mixin";
+
+
+// base
+// ====================================
+html,body{
+    height: 100%;
+}
+.wrap{
+    & > section{
+        @include display-flex(flex);
+        @include justify-content(center);
+        @include align-items(center);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100%;
+        text-align: center;
+    }
+}
+.fn-hide{
+    display: none !important;
+}
+
+.page01{
+    background: #f39800;
+    z-index: 3;
+}
+.page02{
+    background: #eb6100;
+    z-index: 2;
+}
+
+.btn{
+    display: block;
+    width: 180px;
+    height: 40px;
+    margin-bottom: 15px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    background: #f1243c;
+    box-shadow: 0 3px #c31025;    
+    border-radius: 5px;
+}
+
+.text{
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

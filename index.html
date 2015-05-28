@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui" />
+    <title>gentlyPage.js - 平滑切换页面</title>
+    <link rel="stylesheet" href="assets/css/base.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <section class="page01" data-touch="touch">
+            <div class="text">page01</div>
+            <div>
+                <span class="btn btn01">当前屏向上划出屏幕</span>
+                <span class="btn btn02">下一屏向上划入屏幕</span>
+                <span class="btn btn03">当前屏向下划出屏幕</span>
+                <span class="btn btn04">下一屏向下划入屏幕</span>
+                <span class="btn btn05">当前屏向左划出屏幕</span>
+                <span class="btn btn06">下一屏向左划入屏幕</span>
+                <span class="btn btn07">当前屏向右划入屏幕</span>
+                <span class="btn btn08">下一屏向右划入屏幕</span>
+            </div>
+        </section>
+        <section class="page02 fn-hide">
+            <div class="text">page02</div>
+            <span class="btn btn-return">返回</span>
+        </section>
+    </div>
+
+    
+    <script src="assets/js/zepto.min.js"></script>
+    <script src="assets/js/fx.js"></script>
+    <script src="assets/js/gentlyPage.js"></script>
+
+    <script>
+        var $page01 = $('.page01'),
+            $page02 = $('.page02');
+
+
+        var mySwipe = new GentlyPage({
+            zIndex: 999,                // 默认层级
+            activeClassName: 'active',  // 切换到当前显示层添加的ClassName
+            animationDuration: 800,     // 切换动画时间
+            timingFunction: 'ease',     // 动画曲线
+            callback: function() {}     // 切换后的回调
+        });
+
+        $('.btn01').on('click', function() {
+            mySwipe.moveUpOut($page01,$page02);
+        });
+
+        $('.btn02').on('click', function() {
+            mySwipe.moveUpIn($page01,$page02);
+        });
+
+        $('.btn03').on('click', function() {
+            mySwipe.moveDownOut($page01,$page02);
+        });
+
+        $('.btn04').on('click', function() {
+            mySwipe.moveDownIn($page01,$page02);
+        });
+
+        $('.btn05').on('click', function() {
+            mySwipe.moveLeftOut($page01,$page02);
+        });
+
+        $('.btn06').on('click', function() {
+            mySwipe.moveLeftIn($page01,$page02);
+        });
+
+        $('.btn07').on('click', function() {
+            mySwipe.moveRightOut($page01,$page02);
+        });
+
+        $('.btn08').on('click', function() {
+            mySwipe.moveRightIn($page01,$page02);
+        });
+
+        $('.btn-return').on('click', function() {
+            mySwipe.moveUpIn($page02,$page01);
+        });
+    </script>
+
+</body>
+</html>
