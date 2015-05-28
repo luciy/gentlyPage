@@ -1,6 +1,6 @@
 # 平滑切换组件
 
-gentlyPage 移动端（基于Zepto）的竖屏轮播插件：http://luciy.github.io/gentlyPage/
+gentlyPage 移动端（基于Zepto）的平滑切换组件组件：http://luciy.github.io/gentlyPage/
 
 Demo: http://demo.uis.cc/gentlyPage/
 
